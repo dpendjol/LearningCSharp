@@ -22,6 +22,8 @@ namespace ChallengeStudentAverage
 
                 if (float.TryParse(input, out float inputNum) && inputNum > 0 && inputNum <= 20)
                 {
+                    // safe the grade so we can keep track of the last inputted grade, even when a 
+                    // wrong input occurs
                     lastGrade = inputNum;
                     sum += inputNum;
                     entries++;
@@ -29,8 +31,10 @@ namespace ChallengeStudentAverage
                 {
                     if (!input.Equals("-1"))
                     {
+                        Console.WriteLine("---------------------------------------------");
                         Console.WriteLine("Error, input is not a number, of a number not between 0 and 20.");
-                        Console.WriteLine("Press any key to try again.");
+                        Console.WriteLine("This entry is discarded. Press any key to continue.");
+                        Console.WriteLine("---------------------------------------------");
                         Console.ReadKey();
                     }
                 }
