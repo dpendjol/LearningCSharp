@@ -16,22 +16,35 @@ namespace ChallengeTicTacToe
     class Program
     {
         private static string[,] playField = new string[3,3] { 
-            { "O", "2", "3" }, 
+            { "1", "2", "3" }, 
             { "4", "5", "6" }, 
-            { "7", "8", "O" } 
+            { "7", "8", "9" } 
         };
 
         static void Main(string[] args)
         {
+            bool somebodyWon = false;
+            int turn = 0;
             Console.WriteLine("Hello World!");
             DisplayField(playField);
-            MakeAMove("PlayerOne");
-            DisplayField(playField);
-            Console.WriteLine("Player one: " + IsThereAWinner(playField, "O"));
-            Console.WriteLine("Player two: " + IsThereAWinner(playField, "X"));
+            while (!somebodyWon)
+            {
+                if (turn % 2 == 0)
+                {
+                    MakeAMove("PlayerOne");
+                    somebodyWon = PlayerWon(playField, "O");
+                }
+                else
+                {
+                    MakeAMove("PlayerTwo");
+                    somebodyWon = PlayerWon(playField, "X");
+                }
+                DisplayField(playField);
+                turn++;
+            }
         }
 
-        static string IsThereAWinner(string[,] CurrentField, string player)
+        static bool PlayerWon(string[,] CurrentField, string player)
         {
             Console.WriteLine("*** Checking for winner");
             if ((CurrentField[0, 0] == player && CurrentField[0, 1] == player && CurrentField[0, 2] == player) || //row 1 is the same
@@ -43,11 +56,11 @@ namespace ChallengeTicTacToe
                 (CurrentField[0, 0] == player && CurrentField[1, 1] == player && CurrentField[2, 2] == player) || //diag l-r is the same
                 (CurrentField[0, 2] == player && CurrentField[1, 1] == player && CurrentField[2, 0] == player) )//diag r-l is the same
             {
-                return player == "O" ? "PlayerOne" : "PlayeTwo";
+                return true;
             }
             else
             {
-                return "no winner yet";
+                return false;
             }
 
 
@@ -56,6 +69,8 @@ namespace ChallengeTicTacToe
         }
         static bool MakeAMove(string player)
         {
+            Console.Clear();
+            DisplayField(playField);
             Console.WriteLine("Lets play Tic Tac Toe");
             Console.WriteLine("Please choose a field:");
             string input = Console.ReadLine();
