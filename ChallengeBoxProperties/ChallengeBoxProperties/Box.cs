@@ -61,6 +61,14 @@ namespace ChallengeBoxProperties
             }
         }
 
+        public int Surface
+        {
+            get
+            {
+                return this.Length * this.height
+            }
+        }
+
         public Box()
         {
 
