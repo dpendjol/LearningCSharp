@@ -16,9 +16,9 @@ namespace ChallengeTicTacToe
     class Program
     {
         private static string[,] playField = new string[3,3] { 
-            { "1", "2", "3" }, 
+            { "O", "2", "3" }, 
             { "4", "5", "6" }, 
-            { "7", "8", "9" } 
+            { "7", "8", "O" } 
         };
 
         static void Main(string[] args)
@@ -27,8 +27,33 @@ namespace ChallengeTicTacToe
             DisplayField(playField);
             MakeAMove("PlayerOne");
             DisplayField(playField);
+            Console.WriteLine("Player one: " + IsThereAWinner(playField, "O"));
+            Console.WriteLine("Player two: " + IsThereAWinner(playField, "X"));
         }
 
+        static string IsThereAWinner(string[,] CurrentField, string player)
+        {
+            Console.WriteLine("*** Checking for winner");
+            if ((CurrentField[0, 0] == player && CurrentField[0, 1] == player && CurrentField[0, 2] == player) || //row 1 is the same
+                (CurrentField[1, 0] == player && CurrentField[1, 1] == player && CurrentField[1, 2] == player) || //row 2 is the same
+                (CurrentField[2, 0] == player && CurrentField[2, 1] == player && CurrentField[2, 2] == player) || //row 3 is the same
+                (CurrentField[0, 0] == player && CurrentField[1, 0] == player && CurrentField[2, 0] == player) || //column 1 is the same
+                (CurrentField[0, 1] == player && CurrentField[1, 1] == player && CurrentField[2, 1] == player) || //column 2 is the same
+                (CurrentField[0, 2] == player && CurrentField[1, 2] == player && CurrentField[2, 2] == player) || //column 3 is the same
+                (CurrentField[0, 0] == player && CurrentField[1, 1] == player && CurrentField[2, 2] == player) || //diag l-r is the same
+                (CurrentField[0, 2] == player && CurrentField[1, 1] == player && CurrentField[2, 0] == player) )//diag r-l is the same
+            {
+                return player == "O" ? "PlayerOne" : "PlayeTwo";
+            }
+            else
+            {
+                return "no winner yet";
+            }
+
+
+
+    
+        }
         static bool MakeAMove(string player)
         {
             Console.WriteLine("Lets play Tic Tac Toe");
@@ -53,6 +78,7 @@ namespace ChallengeTicTacToe
             {
                 Console.WriteLine("This is not a valid input. Please try again");
                 MakeAMove(player);
+                return false;
             }
         }
 
