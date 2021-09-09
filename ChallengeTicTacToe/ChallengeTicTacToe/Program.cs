@@ -183,11 +183,9 @@ namespace ChallengeTicTacToe
                         {
                             counter++;
                             playField[i, j] = char.Parse(counter.ToString());
-                            System.Diagnostics.Debug.WriteLine(counter);
+                            //System.Diagnostics.Debug.WriteLine(counter);
                         }
                     }
-                    // debug statement //
-
                     turn = 0;
                     break;
                 case "q":
