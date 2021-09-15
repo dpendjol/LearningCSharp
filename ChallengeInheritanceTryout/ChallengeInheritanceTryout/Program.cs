@@ -6,7 +6,13 @@ namespace ChallengeInheritanceTryout
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Dog kees = new Dog("Pietje", 23);
+            kees.Eat();
+            kees.Play();
+            kees.MakeSound();
+
+            Cat snotje = new Cat("Snotje", 50, "Miauwww");
+            snotje.MakeSound();
         }
     }
 }
