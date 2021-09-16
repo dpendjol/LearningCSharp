@@ -16,6 +16,20 @@ namespace ChallengeInheritancePosts
             Console.WriteLine(post1.ToString());
             post1.Update("This is my updated post", false);
             Console.WriteLine(post1.ToString());
+
+            Console.WriteLine("----------------------------------------------");
+
+            ImagePost imagepost1 = new ImagePost("This is a image post", true, "Henk de Vries", "url://to.the.image");
+            Console.WriteLine(imagepost1.ToString());
+            ImagePost imagepost2 = new ImagePost("This is another image post", false, "Henk de Vries", "url://to.another.image");
+            Console.WriteLine(imagepost2.ToString());
+            imagepost2.Update("Another string", false);
+            Console.WriteLine(imagepost2.ToString());
+
+
+
+
+            Console.ReadKey();
         }
     }
 }
