@@ -13,6 +13,8 @@ namespace ChallengeInheritanceTryout
 
             Cat snotje = new Cat("Snotje", 50, "Miauwww");
             snotje.MakeSound();
+            kees.IsHappy = false;
+            kees.Play();
         }
     }
 }
