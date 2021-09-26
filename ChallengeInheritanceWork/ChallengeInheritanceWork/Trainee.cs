@@ -8,6 +8,7 @@ namespace ChallengeInheritanceWork
 {
     /*
      * Create another deriving class of employees - trainees with the properties WorkingHours and SchoolHours and a method Learn().
+     * Override the methods Work() of the trainee class so that it indicates the working hours of the trainee.
      */
     class Trainee : Employee
     {
@@ -23,6 +24,11 @@ namespace ChallengeInheritanceWork
         public void Learn()
         {
             Console.WriteLine($"Trainee {this.Name} is learning");
+        }
+
+        public override void Work()
+        {
+            Console.WriteLine($"{this.Name} has to work for {this.WorkingHours} hours");
         }
     }
 }
