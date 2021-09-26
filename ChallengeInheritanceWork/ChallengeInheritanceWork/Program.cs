@@ -35,6 +35,14 @@ namespace ChallengeInheritanceWork
             bossOne.Work();
             bossOne.Pause();
             bossOne.Lead();
+
+            Console.WriteLine("--------------------------");
+
+            Console.WriteLine("Testing trenee class");
+            Trainee traineeOne = new Trainee("Trainee", "Peter", 400, 20, 18);
+            traineeOne.Work();
+            traineeOne.Pause();
+            traineeOne.Learn();
         }
     }
 }
