@@ -26,8 +26,15 @@ namespace ChallengeInheritancePosts
             imagepost2.Update("Another string", false);
             Console.WriteLine(imagepost2.ToString());
 
+            Console.WriteLine("----------------------------------------------");
 
+            VideoPost videopost1 = new VideoPost("This is a video post", true, "Henk de vries", "url://to.the.video", 20);
+            Console.WriteLine(videopost1.ToString());
 
+            videopost1.Play();
+            Console.WriteLine(  "Press any key to stop playback");
+            Console.ReadKey();
+            videopost1.Stop();
 
             Console.ReadKey();
         }
