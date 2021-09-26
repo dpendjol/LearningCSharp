@@ -22,12 +22,12 @@ namespace ChallengeInheritanceWork
             this.FirstName = firstname;
             this.Salary = salary;
         }
-        public void Work()
+        public virtual void Work()
         {
             Console.WriteLine($"Employee {this.Name} is working.");
         }
 
-        public void Pause()
+        public virtual void Pause()
         {
             Console.WriteLine($"Employee {this.Name} is having a break");
         }

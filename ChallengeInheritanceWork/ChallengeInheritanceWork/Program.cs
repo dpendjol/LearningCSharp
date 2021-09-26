@@ -20,12 +20,21 @@ namespace ChallengeInheritanceWork
         static void Main(string[] args)
         {
             Console.WriteLine("Challenge Inheritance Work");
+
             Console.WriteLine("--------------------------");
 
             Console.WriteLine("Testing Employee class");
             Employee employeeOne = new Employee("Disposer", "George", 200000.00);
             employeeOne.Work();
             employeeOne.Pause();
+
+            Console.WriteLine("--------------------------");
+
+            Console.WriteLine("Testing Boss class");
+            Boss bossOne = new Boss("TheBoss", "Peter", 40000, true);
+            bossOne.Work();
+            bossOne.Pause();
+            bossOne.Lead();
         }
     }
 }
