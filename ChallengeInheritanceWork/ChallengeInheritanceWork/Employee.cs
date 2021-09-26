@@ -12,9 +12,9 @@ namespace ChallengeInheritanceWork
     class Employee
     {
         // properties
-        private string Name { get; set; }
-        private string FirstName { get; set; }
-        private double Salary { get; set; }
+        protected string Name { get; set; }
+        protected string FirstName { get; set; }
+        protected double Salary { get; set; }
 
         public Employee(string name, string firstname, double salary)
         {
