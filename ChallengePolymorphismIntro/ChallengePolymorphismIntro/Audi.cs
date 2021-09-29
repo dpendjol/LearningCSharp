@@ -16,5 +16,15 @@ namespace ChallengePolymorphismIntro
         {
             this.Model = model;
         }
+
+        public new void ShowDetails()
+        {
+            Console.WriteLine($"This {this.brand} is of the model {this.Model}, has {this.HP} horsepower and is available in the color {this.Color}.");
+        }
+
+        public new void Repair()
+        {
+            Console.WriteLine($"The {this.brand} {this.Model} is repaired.");
+        }
     }
 }
