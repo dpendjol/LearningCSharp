@@ -15,6 +15,10 @@ namespace ChallengePolymorphismIntro
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+
+            Audi carone = new Audi(100, "red", "A3");
+            carone.ShowDetails();
+
         }
     }
 }
