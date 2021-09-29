@@ -18,6 +18,11 @@ namespace ChallengePolymorphismIntro
 
             Audi carone = new Audi(100, "red", "A3");
             carone.ShowDetails();
+            Car cartwo = new Audi(200, "blue", "A4");
+            cartwo.ShowDetails();
+            carone.Drive();
+            cartwo.Drive();
+            
 
         }
     }

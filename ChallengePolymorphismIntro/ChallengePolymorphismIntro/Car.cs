@@ -27,5 +27,10 @@ namespace ChallengePolymorphismIntro
         {
             Console.WriteLine($"Car was repaired");
         }
+
+        public virtual void Drive()
+        {
+            Console.WriteLine("This car drives like a normal car");
+        }
     }
 }
